@@ -22,15 +22,23 @@ class PizzaFactory
      */
     public Pizza createPizza(String type)
     {
-        Pizza pizza = null;
-        if(type.equals("cheese"))
-        {
-            pizza = new CheesePizza();
+        AbstractFactory apf = null;
+        if(type.equals("cheese")) {
+            apf = new CheesePizzaFactory();
+        } else {
+            apf = new PepperoniPizzaFactory();
         }
-        else if (type.equals("pepperoni"))
-        {
-                pizza = new PepperoniPizza();
-        }
-        return pizza;
+        return apf.getPizza(type);
+        
+//        Pizza pizza = null;
+//        if(type.equals("cheese"))
+//        {
+//            pizza = new CheesePizza();
+//        }
+//        else if (type.equals("pepperoni"))
+//        {
+//                pizza = new PepperoniPizza();
+//        }
+//        return pizza;
     }
 }

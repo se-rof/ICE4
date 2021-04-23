@@ -28,6 +28,8 @@ public class PizzaShop {
         System.out.println("Please enter exactly cheese or pepperoni");
         String type = sc.nextLine();
         PizzaFactory pf = new PizzaFactory();
+        //Pizza pizza = pf.createPizza(type);
+        //A simplified and abstracted the factory more
         Pizza pizza = pf.createPizza(type);
         System.out.println("how many slices would you like?");
         int numSlices = sc.nextInt();
